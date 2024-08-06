@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, Typography, Box, LinearProgress } from '
 // Function to fetch system details from the server
 const fetchSystemDetails = async () => {
   try {
-    const response = await axios.get('http://raspberrypi.local:3000/stats');
+    const response = await axios.get('https://rasp.everythingwithai.com/stats');
     return response.data;
     
   } catch (error) {
@@ -22,7 +22,7 @@ const Home = () => {
   const [cpuInfo, setCpuInfo] = useState(null);
 
   useEffect(() => {
-    fetch('http://raspberrypi.local:3000/cpuinfo')
+    fetch('https://rasp.everythingwithai.com/cpuinfo')
       .then(response => response.json())
       .then(data => {
         setCpuInfo(data);
